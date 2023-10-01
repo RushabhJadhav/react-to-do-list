@@ -1,14 +1,16 @@
 import "./AddTodo.css";
 
-const AddTodo = ({ todo, todoLists }) => {
+const AddTodo = ({ todo, todoLists, setTodoLists }) => {
     const handleClick = (e) => {
         e.preventDefault()
         if(todo.length != 0) {
-            todoLists.push(todo)
+            const updateTodoLists = [...todoLists, todo]
+
+            setTodoLists(updateTodoLists)
         } else {
             alert('Please enter something')
         }
-        console.log(todoLists)
+        // console.log(todoLists)
     }
     return (
         <>
