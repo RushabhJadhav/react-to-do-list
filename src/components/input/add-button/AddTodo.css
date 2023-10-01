@@ -1,0 +1,7 @@
+.add-button {
+    position: absolute;
+    right: 0;
+    width: 15%;
+    height: 100%;
+    font-size: 1.2rem;
+}
