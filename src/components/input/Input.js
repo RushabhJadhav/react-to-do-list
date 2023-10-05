@@ -9,7 +9,7 @@ const Input = ({ todoLists, setTodoLists }) => {
     }
     return (
         <div className="input-cont">
-            <input type="text" placeholder="Add your todo" value={todo} onChange={handleInput} />
+            <input type="text" placeholder="Add your todo..." value={todo} onChange={handleInput} />
             <AddTodo todo={todo} todoLists={todoLists} setTodoLists={setTodoLists} />
         </div>
     )

@@ -1,0 +1,12 @@
+li {
+    list-style-type: none;
+    border: 1px solid #B4B4B4;
+    padding: 15px;
+    border-radius: 4px;
+    color: #F4F6FA;
+    /* border-bottom: none; */
+    margin-bottom: 10px;
+}
+/* li:last-of-type {
+    border: 1px solid #B4B4B4;
+} */
