@@ -12,9 +12,15 @@ li {
 li input[type="checkbox"] {
     margin-right: 10px;
     width: .8rem;
+    opacity: 0;
+    transition: all .4s ease;
+}
+li:hover input[type="checkbox"] {
+    opacity: 1;
 }
 li p {
-    width: 90%;
+    width: 80%;
+    /* border: 1px solid red; */
 }
 .line {
     text-decoration: line-through;
@@ -23,9 +29,14 @@ li .icons {
     transition: all .4s ease;
     opacity: 0;
     right: 0;
+    top: 35%;
 }
 li:hover .icons.edit-icon {
     right: 45px;
+    opacity: 100;
+}
+li:hover .icons.star-icon {
+    right: 75px;
     opacity: 100;
 }
 li:hover .icons.delete-icon {
