@@ -3,7 +3,7 @@ import "./AddTodo.css";
 const AddTodo = ({ todo, todoLists, setTodoLists }) => {
     const handleClick = (e) => {
         e.preventDefault()
-        if(todo.length != 0) {
+        if(todo.length !== 0) {
             const updateTodoLists = [...todoLists, todo]
 
             setTodoLists(updateTodoLists)
@@ -14,7 +14,7 @@ const AddTodo = ({ todo, todoLists, setTodoLists }) => {
     }
     return (
         <>
-            <button className="add-button" onClick={handleClick}>Add</button>
+            <button className="add-button" onClick={handleClick}>+</button>
         </>
     )
 }

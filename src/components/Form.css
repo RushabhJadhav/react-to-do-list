@@ -1,9 +1,12 @@
 .form {
     /* border: 1px solid red; */
+    background-color: #2E3239;
+    position: sticky;
+    top: -0;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
     width: 50%;
-    margin: 10px auto 0 auto;
+    margin: auto;
 }
