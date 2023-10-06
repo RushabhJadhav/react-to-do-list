@@ -1,7 +1,12 @@
 .add-button {
     position: absolute;
     right: 0;
-    width: 15%;
+    width: 10%;
     height: 100%;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #8C8E93;
+    cursor: pointer;
 }

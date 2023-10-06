@@ -1,0 +1,30 @@
+li {
+    position: relative;
+    list-style-type: none;
+    border: 1px solid #B4B4B4;
+    padding: 15px 70px 15px 15px;
+    border-radius: 4px;
+    color: #F4F6FA;
+    /* border-bottom: none; */
+    margin-bottom: 10px;
+}
+li .icons {
+    transition: all .4s linear;
+    opacity: 0;
+    right: 0;
+}
+li:hover .icons.edit-icon {
+    right: 45px;
+    opacity: 100;
+}
+li:hover .icons.delete-icon {
+    right: 20px;
+    opacity: 100;
+}
+.icons {
+    position: absolute;
+    cursor: pointer;
+}
+/* li:last-of-type {
+    border: 1px solid #B4B4B4;
+} */
