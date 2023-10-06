@@ -20,7 +20,6 @@ li:hover input[type="checkbox"] {
 }
 li p {
     width: 80%;
-    /* border: 1px solid red; */
 }
 .line {
     text-decoration: line-through;

@@ -1,10 +1,11 @@
 import Todos from './todos/Todos' ;
 import "./Lists.css";
 
-const Lists = ({ todoLists }) => {
+const Lists = ({ todoLists, setEditModal }) => {
+    
     return (
         <ul className="list-cont">
-            <Todos todoLists={todoLists} />
+            <Todos todoLists={todoLists} setEditModal={setEditModal} />
         </ul>
     )
 }
