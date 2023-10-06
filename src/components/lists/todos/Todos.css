@@ -1,15 +1,26 @@
 li {
+    display: flex;
     position: relative;
     list-style-type: none;
     border: 1px solid #B4B4B4;
-    padding: 15px 70px 15px 15px;
+    padding: 15px;
     border-radius: 4px;
     color: #F4F6FA;
     /* border-bottom: none; */
     margin-bottom: 10px;
 }
+li input[type="checkbox"] {
+    margin-right: 10px;
+    width: .8rem;
+}
+li p {
+    width: 90%;
+}
+.line {
+    text-decoration: line-through;
+}
 li .icons {
-    transition: all .4s linear;
+    transition: all .4s ease;
     opacity: 0;
     right: 0;
 }
