@@ -1,6 +1,6 @@
 import "./AddTodo.css";
 
-const AddTodo = ({ todo, todoLists, setTodoLists }) => {
+const AddTodo = ({ todo, setTodo, todoLists, setTodoLists }) => {
     const handleClick = (e) => {
         e.preventDefault()
         if(todo.length !== 0) {
@@ -10,8 +10,9 @@ const AddTodo = ({ todo, todoLists, setTodoLists }) => {
         } else {
             alert('Please enter something')
         }
-        // console.log(todoLists)
+        setTodo('')
     }
+
     return (
         <>
             <button className="add-button" onClick={handleClick}>+</button>
