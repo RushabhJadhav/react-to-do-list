@@ -5,12 +5,12 @@ import EditModal from './components/edit/Edit';
 
 function App() {
   const [todoLists, setTodoLists] = useState([]);
-  const [editModal, setEditModal] = useState(false)
+  const [editModal, setEditModal] = useState(false);
 
   return (
     <div>
       <Form todoLists={todoLists} setTodoLists={setTodoLists} setEditModal={setEditModal} />
-      <EditModal editModal={editModal} setEditModal={setEditModal} />
+      <EditModal editModal={editModal} setEditModal={setEditModal} todoLists={todoLists} setTodoLists={setTodoLists} />
     </div>
   );
 }

@@ -19,6 +19,9 @@
     padding: 10px 20px;
     color: #fff;
 }
+.modal-header p {
+    font-size: 1.5rem;
+}
 .modal-header span {
     cursor: pointer;
     font-size: 1.5rem;

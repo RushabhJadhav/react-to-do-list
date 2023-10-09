@@ -10,7 +10,7 @@ const Form = ({ todoLists, setTodoLists, setEditModal }) => {
             <form className="form">
                 <Input todoLists={todoLists} setTodoLists={setTodoLists} />
             </form>
-            <Lists todoLists={todoLists} setEditModal={setEditModal} />
+            <Lists todoLists={todoLists} setTodoLists={setTodoLists} setEditModal={setEditModal} />
         </>
     )
 }

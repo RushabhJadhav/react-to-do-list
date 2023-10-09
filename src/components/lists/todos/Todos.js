@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
 import './Todos.css';
 
-const TodoItem = ({ item, setEditModal }) => {
+const TodoItem = ({ item, setEditModal, todoLists, setTodoLists }) => {
     const [checked, setChecked] = useState(false);
 
     
@@ -16,23 +16,29 @@ const TodoItem = ({ item, setEditModal }) => {
         setEditModal(prevState => !prevState)
     }
 
+    const handleDelete = () => {
+        let arr = todoLists.filter(todo => todo !== item);
+        setTodoLists(arr);
+    }
+
     return (
         <li>
             <input type='checkbox' onClick={handleCheckbox} />
             <p style={{textDecoration : checked ? 'line-through' : null}}>{item}</p>
             <FontAwesomeIcon className='icons star-icon' icon={faStar} />
             <FontAwesomeIcon className='icons edit-icon' icon={faPenToSquare} onClick={handleEdit} />
-            <FontAwesomeIcon className='icons delete-icon' icon={faTrash} />
+            <FontAwesomeIcon className='icons delete-icon' icon={faTrash} onClick={handleDelete} />
         </li>
     )
 }
 
-const Todos = ({ todoLists, setEditModal }) => {
+const Todos = ({ todoLists, setTodoLists, setEditModal }) => {
     
     return (
         <>
             {todoLists.map(item => {
-                return <TodoItem item={item} setEditModal={setEditModal} />
+                let itemId = todoLists.indexOf(item)
+                return <TodoItem key={itemId} item={item} setEditModal={setEditModal} todoLists={todoLists} setTodoLists={setTodoLists} />
             })}
         </>
     )
