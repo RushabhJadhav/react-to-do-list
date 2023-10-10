@@ -2,7 +2,7 @@ import Input from "../input/Input";
 import Lists from "../lists/Lists";
 import "./Form.css";
 
-const Form = ({ todoLists, setTodoLists, openEditModal }) => {
+const Form = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
 
     return (
         <>
@@ -10,7 +10,7 @@ const Form = ({ todoLists, setTodoLists, openEditModal }) => {
             <form className="form">
                 <Input todoLists={todoLists} setTodoLists={setTodoLists} />
             </form>
-            <Lists todoLists={todoLists} setTodoLists={setTodoLists} openEditModal={openEditModal} />
+            <Lists todoLists={todoLists} setTodoLists={setTodoLists} openEditModal={openEditModal} setEditVal={setEditVal} />
         </>
     )
 }

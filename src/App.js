@@ -7,19 +7,23 @@ import EditModal from './components/edit/Edit';
 function App() {
   const [todoLists, setTodoLists] = useState([]);
   const [editModal, openEditModal] = useState(false);
+  const [editVal, setEditVal] = useState('');
 
   return (
     <div>
       <Form 
-        todoLists={todoLists} 
-        setTodoLists={setTodoLists} 
-        openEditModal={openEditModal} 
+        todoLists={todoLists}
+        setTodoLists={setTodoLists}
+        openEditModal={openEditModal}
+        setEditVal={setEditVal}
       />
       <EditModal 
-        editModal={editModal} 
-        openEditModal={openEditModal} 
-        todoLists={todoLists} 
-        setTodoLists={setTodoLists} 
+        editModal={editModal}
+        openEditModal={openEditModal}
+        todoLists={todoLists}
+        setTodoLists={setTodoLists}
+        editVal={editVal}
+        setEditVal={setEditVal}
       />
       {/* <DeleteModal /> */}
     </div>

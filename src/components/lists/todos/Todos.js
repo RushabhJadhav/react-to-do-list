@@ -4,7 +4,7 @@ import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
 import './Todos.css';
 
-const TodoItem = ({ item, openEditModal, todoLists, setTodoLists }) => {
+const TodoItem = ({ item, itemId, openEditModal, todoLists, setTodoLists, setEditVal }) => {
     const [checked, setChecked] = useState(false);
 
     
@@ -13,6 +13,7 @@ const TodoItem = ({ item, openEditModal, todoLists, setTodoLists }) => {
     }
     
     const handleEdit = () => {
+        setEditVal(itemId)
         openEditModal(prevState => !prevState)
     }
 
@@ -32,13 +33,20 @@ const TodoItem = ({ item, openEditModal, todoLists, setTodoLists }) => {
     )
 }
 
-const Todos = ({ todoLists, setTodoLists, openEditModal }) => {
+const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
     
     return (
         <>
             {todoLists.map(item => {
                 let itemId = todoLists.indexOf(item)
-                return <TodoItem key={itemId} item={item} openEditModal={openEditModal} todoLists={todoLists} setTodoLists={setTodoLists} />
+                return <TodoItem key={itemId}
+                            item={item} 
+                            itemId={itemId}
+                            openEditModal={openEditModal} 
+                            todoLists={todoLists} 
+                            setTodoLists={setTodoLists}
+                            setEditVal={setEditVal}
+                        />
             })}
         </>
     )
