@@ -1,24 +1,24 @@
 import { useState } from "react";
 import "./Edit.css";
 
-const EditModal = ({ editModal, setEditModal, todoLists, setTodoLists }) => {
-    const [editTodo, setEditTodo] = useState('')
+const EditModal = ({ editModal, openEditModal, todoLists, setTodoLists }) => {
+    const [editTodo, openEditTodo] = useState('')
 
     // console.log(todoLists)
     // console.log(setTodoLists)
 
     const handleClose = () => {
-        setEditModal(prevState => !prevState)
+        openEditModal(prevState => !prevState)
     }
 
     const handleSave = () => {
         setTimeout(() => {
-            setEditModal(prevState => !prevState)
+            openEditModal(prevState => !prevState)
         }, 500)
     }
 
     const handleEdit = (e) => {
-        console.log(e.target.value)
+        openEditTodo(e.target.value)
     }
 
     return (
