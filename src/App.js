@@ -4,8 +4,10 @@ import Form from "./components/form/Form";
 import EditModal from './components/edit/Edit';
 // import DeleteModal from './components/delete/Delete';
 
+let localTodos = JSON.parse(localStorage.getItem('todolist'))
+
 function App() {
-  const [todoLists, setTodoLists] = useState([]);
+  const [todoLists, setTodoLists] = useState(localTodos);
   const [editModal, openEditModal] = useState(false);
   const [editVal, setEditVal] = useState('');
 
