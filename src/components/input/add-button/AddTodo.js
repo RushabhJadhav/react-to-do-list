@@ -1,4 +1,4 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import "./AddTodo.css";
 
 const AddTodo = ({ todo, setTodo, todoLists, setTodoLists }) => {
@@ -14,9 +14,9 @@ const AddTodo = ({ todo, setTodo, todoLists, setTodoLists }) => {
         setTodo('')
     }
 
-    // useEffect(() => {
-    //     localStorage.setItem('todolist', JSON.stringify(todoLists))
-    // }, [todoLists])
+    useEffect(() => {
+        localStorage.setItem('todolist', JSON.stringify(todoLists))
+    }, [todoLists])
 
     return (
         <>

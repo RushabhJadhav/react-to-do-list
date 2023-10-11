@@ -9,14 +9,19 @@ const EditModal = ({ editModal, openEditModal, todoLists, setTodoLists, editVal,
     }
 
     const handleSave = () => {
-        let arr = [...todoLists];
-        arr[editVal] = text;
-        setTimeout(() => {
-            openEditModal(prevState => !prevState)
-            setTodoLists(arr)
-        }, 500)
-    }
+        if(text.length != 0) {
+            let arr = [...todoLists];
+            arr[editVal] = text;
 
+            setTimeout(() => {
+                openEditModal(prevState => !prevState)
+                setTodoLists(arr)
+            }, 500)
+        } else {
+            alert("you can't leave the field empty")
+        }
+    }
+    
     const handleEdit = (e) => {
         newText(e.target.value)
     }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import Form from "./components/form/Form";
 import EditModal from './components/edit/Edit';
