@@ -9,7 +9,7 @@ const EditModal = ({ editModal, openEditModal, todoLists, setTodoLists, editVal,
     }
 
     const handleSave = () => {
-        if(text.length != 0) {
+        if(text.length !== 0) {
             let arr = [...todoLists];
             arr[editVal] = text;
 
