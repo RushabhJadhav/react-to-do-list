@@ -39,7 +39,7 @@ const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
 
     return (
         <>
-            {todoLists.map(item => {
+            {todoLists && todoLists.map(item => {
                 // let itemId = todoLists.indexOf(item)
                 return <TodoItem key={item.id}
                             item={item.task} 
