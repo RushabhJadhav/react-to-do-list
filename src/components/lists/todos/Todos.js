@@ -8,17 +8,17 @@ const TodoItem = ({ item, itemId, openEditModal, todoLists, setTodoLists, setEdi
     const [checked, setChecked] = useState(false);
 
     
-    const handleCheckbox = e => {
+    const handleCheckbox = () => {
         setChecked(!checked)
     }
     
-    const handleEdit = () => {
+    const handleEdit = () => {  
         setEditVal(itemId)
         openEditModal(prevState => !prevState)
     }
 
     const handleDelete = () => {
-        let arr = todoLists.filter(todo => todo !== item);
+        let arr = todoLists.filter(todo => todo.task !== item);
         setTodoLists(arr);
     }
 
@@ -35,13 +35,15 @@ const TodoItem = ({ item, itemId, openEditModal, todoLists, setTodoLists, setEdi
 
 const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
     
+    // console.log(todoLists)
+
     return (
         <>
             {todoLists.map(item => {
-                let itemId = todoLists.indexOf(item)
-                return <TodoItem key={itemId}
-                            item={item} 
-                            itemId={itemId}
+                // let itemId = todoLists.indexOf(item)
+                return <TodoItem key={item.id}
+                            item={item.task} 
+                            itemId={item.id}
                             openEditModal={openEditModal} 
                             todoLists={todoLists} 
                             setTodoLists={setTodoLists}
