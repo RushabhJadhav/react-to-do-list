@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from './Delete.module.css'
 
 const DeleteModal = ({ deleteModal, openDeleteModal, deleteItem, todoLists, setTodoLists}) => {
-    console.log(deleteItem)
     const handleClose = () => {
         openDeleteModal(prevState => !prevState)
     }

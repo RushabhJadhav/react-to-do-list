@@ -1,5 +1,6 @@
 import Input from "../input/Input";
 import Lists from "../lists/Lists";
+import CompletedTodos from "../completed/CompletedTodos";
 import "./Form.css";
 
 const Form = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
@@ -11,6 +12,7 @@ const Form = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
                 <Input todoLists={todoLists} setTodoLists={setTodoLists} />
             </form>
             <Lists todoLists={todoLists} setTodoLists={setTodoLists} openEditModal={openEditModal} setEditVal={setEditVal} />
+            <CompletedTodos />
         </>
     )
 }
