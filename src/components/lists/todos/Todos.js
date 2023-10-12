@@ -12,7 +12,7 @@ const TodoItem = ({ item, itemId, openEditModal, todoLists, setTodoLists, setEdi
         setChecked(!checked)
     }
     
-    const handleEdit = () => {
+    const handleEdit = () => {  
         setEditVal(itemId)
         openEditModal(prevState => !prevState)
     }
@@ -35,7 +35,7 @@ const TodoItem = ({ item, itemId, openEditModal, todoLists, setTodoLists, setEdi
 
 const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
     
-    console.log(todoLists)
+    // console.log(todoLists)
 
     return (
         <>

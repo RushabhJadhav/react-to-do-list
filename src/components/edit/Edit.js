@@ -11,7 +11,11 @@ const EditModal = ({ editModal, openEditModal, todoLists, setTodoLists, editVal,
     const handleSave = () => {
         if(text.length !== 0) {
             let arr = [...todoLists];
-            arr[editVal] = text;
+            arr.filter(item => {
+                if(item.id == editVal) {
+                    item.task = text
+                }
+            })
 
             setTimeout(() => {
                 openEditModal(prevState => !prevState)
