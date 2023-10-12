@@ -1,4 +1,4 @@
-.edit-modal {
+.editModal {
     background-color: #2E3239;
     position: absolute;
     right: 50%;
@@ -10,7 +10,7 @@
     transition: all 0.5s ease;
     border-radius: 5px;
 }
-.modal-header {
+.modalHeader {
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid #8C8E93;
@@ -19,18 +19,18 @@
     padding: 10px 20px;
     color: #fff;
 }
-.modal-header p {
+.modalHeader p {
     font-size: 1.5rem;
 }
-.modal-header span {
+.modalHeader span {
     cursor: pointer;
     font-size: 1.5rem;
 }
-.modal-body {
+.modalBody {
     padding: 30px 20px;
     border-bottom: 1px solid #8C8E93;
 }
-.modal-body input {
+.modalBody input {
     width: 100%;
     background-color: rgb(140, 142, 147, .4);
     color: #8C8E93;
@@ -41,24 +41,24 @@
     height: 40px;
     padding-left: 10px;
 }
-.modal-footer {
+.modalFooter {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding: 15px 20px;
 }
-.modal-footer button {
+.modalFooter button {
     margin-left: 20px;
     padding: 8px 15px;
     border-radius: 2px;
     border: none;
     cursor: pointer;
 }
-.modal-footer button:first-of-type {
+.modalFooter button:first-of-type {
     background-color: transparent;
     color: #29ABE2;
 }
-.modal-footer button:last-of-type {
+.modalFooter button:last-of-type {
     background-color: #29ABE2;
     color: #fff;
 }

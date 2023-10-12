@@ -3,8 +3,10 @@ import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
 import './Todos.css';
+import DeleteModal from '../../delete/Delete'
 
-const TodoItem = ({ item, itemId, openEditModal, todoLists, setTodoLists, setEditVal }) => {
+
+const TodoItem = ({ item, itemId, openEditModal, setEditVal, openDeleteModal, setDeleteItem }) => {
     const [checked, setChecked] = useState(false);
 
     
@@ -18,8 +20,8 @@ const TodoItem = ({ item, itemId, openEditModal, todoLists, setTodoLists, setEdi
     }
 
     const handleDelete = () => {
-        let arr = todoLists.filter(todo => todo.task !== item);
-        setTodoLists(arr);
+        openDeleteModal(prevState => !prevState)
+        setDeleteItem(item)
     }
 
     return (
@@ -34,8 +36,8 @@ const TodoItem = ({ item, itemId, openEditModal, todoLists, setTodoLists, setEdi
 }
 
 const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
-    
-    // console.log(todoLists)
+    const [deleteModal, openDeleteModal] = useState(false);
+    const [deleteItem, setDeleteItem] = useState('')
 
     return (
         <>
@@ -44,12 +46,20 @@ const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
                 return <TodoItem key={item.id}
                             item={item.task} 
                             itemId={item.id}
-                            openEditModal={openEditModal} 
-                            todoLists={todoLists} 
-                            setTodoLists={setTodoLists}
+                            openEditModal={openEditModal}
                             setEditVal={setEditVal}
+                            openDeleteModal={openDeleteModal}
+                            setDeleteItem={setDeleteItem}
                         />
             })}
+            <DeleteModal 
+                deleteModal={deleteModal}
+                openDeleteModal={openDeleteModal}
+                deleteItem={deleteItem}
+                setDeleteItem={setDeleteItem}
+                todoLists={todoLists}
+                setTodoLists={setTodoLists}
+            />
         </>
     )
 }
