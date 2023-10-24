@@ -1,41 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons';
-import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
 import './Todos.css';
-
-const TodoItem = ({ item, itemId, openEditModal, todoLists, setTodoLists, setEditVal }) => {
-    const [checked, setChecked] = useState(false);
-
-    
-    const handleCheckbox = () => {
-        setChecked(!checked)
-    }
-    
-    const handleEdit = () => {  
-        setEditVal(itemId)
-        openEditModal(prevState => !prevState)
-    }
-
-    const handleDelete = () => {
-        let arr = todoLists.filter(todo => todo.task !== item);
-        setTodoLists(arr);
-    }
-
-    return (
-        <li>
-            <input type='checkbox' onClick={handleCheckbox} />
-            <p style={{textDecoration : checked ? 'line-through' : null}}>{item}</p>
-            <FontAwesomeIcon className='icons star-icon' icon={faStar} />
-            <FontAwesomeIcon className='icons edit-icon' icon={faPenToSquare} onClick={handleEdit} />
-            <FontAwesomeIcon className='icons delete-icon' icon={faTrash} onClick={handleDelete} />
-        </li>
-    )
-}
+import TodoItem from './TodoItem';
+import DeleteModal from '../../delete/Delete';
 
 const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
-    
-    // console.log(todoLists)
+    const [deleteModal, openDeleteModal] = useState(false);
+    const [deleteItem, setDeleteItem] = useState('')
 
     return (
         <>
@@ -44,12 +14,22 @@ const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
                 return <TodoItem key={item.id}
                             item={item.task} 
                             itemId={item.id}
-                            openEditModal={openEditModal} 
-                            todoLists={todoLists} 
-                            setTodoLists={setTodoLists}
+                            openEditModal={openEditModal}
                             setEditVal={setEditVal}
+                            openDeleteModal={openDeleteModal}
+                            setDeleteItem={setDeleteItem}
+                            todoLists={todoLists}
+                            setTodoLists={setTodoLists}
                         />
             })}
+            <DeleteModal 
+                deleteModal={deleteModal}
+                openDeleteModal={openDeleteModal}
+                deleteItem={deleteItem}
+                setDeleteItem={setDeleteItem}
+                todoLists={todoLists}
+                setTodoLists={setTodoLists}
+            />
         </>
     )
 }

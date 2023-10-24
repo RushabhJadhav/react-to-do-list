@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Edit.css";
+import styles from './Edit.module.css'
 
 const EditModal = ({ editModal, openEditModal, todoLists, setTodoLists, editVal, setEditVal }) => {
     const [text, newText] = useState('')
@@ -31,15 +31,15 @@ const EditModal = ({ editModal, openEditModal, todoLists, setTodoLists, editVal,
     }
 
     return (
-        <div className="edit-modal" style={{top: editModal ? '50%' : '-50%'}}>
-            <div className="modal-header">
+        <div className={styles.editModal} style={{top: editModal ? '50%' : '-50%'}}>
+            <div className={styles.modalHeader}>
                 <p>Edit your to do</p>
                 <span onClick={handleClose}>&times;</span>
             </div>
-            <div className="modal-body">
+            <div className={styles.modalBody}>
                 <input type="text" placeholder="update your todo" onChange={handleEdit} />
             </div>
-            <div className="modal-footer">
+            <div className={styles.modalFooter}>
                 <button onClick={handleClose}>Cancel</button>
                 <button onClick={handleSave}>Save</button>
             </div>

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import './App.css'
 import Form from "./components/form/Form";
 import EditModal from './components/edit/Edit';
-// import DeleteModal from './components/delete/Delete';
-localStorage.setItem('todolist', JSON.stringify([]))
+
+// localStorage.setItem('todolist', JSON.stringify([]))
 let localTodos = JSON.parse(localStorage.getItem('todolist'))
 
 function App() {
@@ -27,7 +27,6 @@ function App() {
         editVal={editVal}
         setEditVal={setEditVal}
       />
-      {/* <DeleteModal /> */}
     </div>
   );
 }
