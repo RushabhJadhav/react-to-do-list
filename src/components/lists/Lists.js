@@ -1,7 +1,7 @@
 import Todos from './todos/Todos' ;
 import "./Lists.css";
 
-const Lists = ({ todoLists, setTodoLists , openEditModal, editVal, setEditVal }) => {
+const Lists = ({ todoLists, setTodoLists , openEditModal, editVal, setEditVal, completed, setCompleted}) => {
     
     return (
         <ul className="list-cont">
@@ -11,6 +11,8 @@ const Lists = ({ todoLists, setTodoLists , openEditModal, editVal, setEditVal })
                 openEditModal={openEditModal}
                 editVal={editVal}
                 setEditVal={setEditVal}
+                completed={completed}
+                setCompleted={setCompleted}
             />
         </ul>
     )

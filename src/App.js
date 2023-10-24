@@ -10,6 +10,7 @@ function App() {
   const [todoLists, setTodoLists] = useState(localTodos);
   const [editModal, openEditModal] = useState(false);
   const [editVal, setEditVal] = useState('');
+  const [completed, setCompleted] = useState(false);
 
   return (
     <div>
@@ -18,6 +19,8 @@ function App() {
         setTodoLists={setTodoLists}
         openEditModal={openEditModal}
         setEditVal={setEditVal}
+        completed={completed}
+        setCompleted={setCompleted}
       />
       <EditModal 
         editModal={editModal}
