@@ -20,7 +20,7 @@ const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal, completed, 
                             setDeleteItem={setDeleteItem}
                             todoLists={todoLists}
                             setTodoLists={setTodoLists}
-                            completed={completed}
+                            completed={item.completed}
                             setCompleted={setCompleted}
                         />
             })}

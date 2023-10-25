@@ -21,3 +21,9 @@
 .input-cont input::placeholder {
     color: #8C8E93;
 }
+
+@media screen and (max-width: 768px) {
+    .input-cont {
+        width: 100%;
+    }
+}

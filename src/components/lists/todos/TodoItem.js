@@ -6,8 +6,14 @@ import './Todos.css';
 const TodoItem = ({ item, itemId, openEditModal, setEditVal, openDeleteModal, setDeleteItem, todoLists, setTodoLists, completed, setCompleted}) => {
     
     const handleCheckbox = () => {
-        // setChecked(!checked)
+        let checkedItem = [...todoLists]
         setCompleted(prevState => !prevState)
+        checkedItem.filter(item => {
+            if(item.id === itemId) {
+                item.completed = !item.completed
+            }
+        })
+        setTodoLists(checkedItem)
     }
     
     const handleEdit = () => {  
