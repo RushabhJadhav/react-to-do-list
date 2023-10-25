@@ -49,3 +49,9 @@
     background-color: #29ABE2;
     color: #fff;
 }
+
+@media screen and (max-width: 425px) {
+    .deleteModal {
+        width: 80%;
+    }
+}
