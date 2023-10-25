@@ -1,7 +1,12 @@
 .list-cont {
-    /* border: 1px solid red; */
     height: 400px;
     width: 40%;
     margin: auto;
     margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .list-cont {
+        width: 90%;
+    }
 }

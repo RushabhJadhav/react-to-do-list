@@ -12,7 +12,7 @@ const EditModal = ({ editModal, openEditModal, todoLists, setTodoLists, editVal,
         if(text.length !== 0) {
             let arr = [...todoLists];
             arr.filter(item => {
-                if(item.id == editVal) {
+                if(item.id === editVal) {
                     item.task = text
                 }
             })

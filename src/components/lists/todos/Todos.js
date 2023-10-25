@@ -3,7 +3,7 @@ import './Todos.css';
 import TodoItem from './TodoItem';
 import DeleteModal from '../../delete/Delete';
 
-const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
+const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal, completed, setCompleted }) => {
     const [deleteModal, openDeleteModal] = useState(false);
     const [deleteItem, setDeleteItem] = useState('')
 
@@ -20,6 +20,8 @@ const Todos = ({ todoLists, setTodoLists, openEditModal, setEditVal }) => {
                             setDeleteItem={setDeleteItem}
                             todoLists={todoLists}
                             setTodoLists={setTodoLists}
+                            completed={item.completed}
+                            setCompleted={setCompleted}
                         />
             })}
             <DeleteModal 
