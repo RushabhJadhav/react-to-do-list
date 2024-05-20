@@ -1,3 +1,5 @@
+import React from "react";
+
 const CompletedTodos = () => {
     return (
         <ul style={{display: "none"}}></ul>
