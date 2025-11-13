@@ -3,8 +3,12 @@ import './App.css'
 import Form from "./components/form/Form";
 import EditModal from './components/edit/Edit';
 
-localStorage.setItem('todolist', JSON.stringify([]))
-let localTodos = JSON.parse(localStorage.getItem('todolist'))
+let localTodos = JSON.parse(localStorage.getItem('todolist'));
+
+if (!Array.isArray(localTodos)) {
+  localTodos = [];
+  localStorage.setItem('todolist', JSON.stringify(localTodos));
+}
 
 function App() {
   const [todoLists, setTodoLists] = useState(localTodos);
