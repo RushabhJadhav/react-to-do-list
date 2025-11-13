@@ -3,7 +3,7 @@ import './App.css'
 import Form from "./components/form/Form";
 import EditModal from './components/edit/Edit';
 
-// localStorage.setItem('todolist', JSON.stringify([]))
+localStorage.setItem('todolist', JSON.stringify([]))
 let localTodos = JSON.parse(localStorage.getItem('todolist'))
 
 function App() {
